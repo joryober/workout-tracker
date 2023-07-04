@@ -1,1 +1,23 @@
+.workout-item {
+  border: black 2px solid;
+  height: 3rem;
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
 
+.workout-container {
+  display: flex;
+}
+
+.active {
+  background-color: red;
+}
+
+.inactive {
+  background-color: blue;
+  color: seashell;
+  opacity: 0.5
+}

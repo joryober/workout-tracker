@@ -1,0 +1,21 @@
+{
+    "workouts":
+        [
+            {
+                "name": "Bis & Back",
+                "active": true
+            },
+            {
+                "name": "Run a Mile",
+                "active": false
+            },
+            {
+                "name": "Chest & Tris",
+                "active": false
+            },
+            {
+                "name": "Shoulders & Legs",
+                "active": false
+            }
+        ]
+}
