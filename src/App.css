@@ -12,12 +12,26 @@
   display: flex;
 }
 
-.active {
-  background-color: red;
+.workout-container > .workout-text-container > .active:hover {
+  cursor: pointer;
 }
 
 .inactive {
   background-color: blue;
   color: seashell;
   opacity: 0.5
+}
+
+.active {
+  display: flex;
+}
+
+.workout-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.workout-text-container > p {
+  margin-top: 0
 }
