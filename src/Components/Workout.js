@@ -5,10 +5,14 @@ const Workout = ({ name, active }) => {
     backgroundColor: active ? "red" : "blue",
   });
 
-  const handleClick = () => {
+  const handleClick = (event) => {
     setBackground({
       backgroundColor: active ? "green" : "blue",
     });
+    localStorage.setItem(new Date().toLocaleString(), [
+      event.target.textContent,
+    ]);
+    console.log(localStorage);
   };
 
   return (

@@ -13,6 +13,14 @@ function App() {
           <Workout name={workout.name} active={workout.active} />
         ))}
       </div>
+      <br />
+      <h3>Workouts completed</h3>
+      {Object.entries(localStorage).map((entry) => (
+        <p>
+          <span style={{ fontWeight: "bold" }}>{entry[0]}</span>:{" "}
+          <span style={{ color: "red" }}>{entry[1]}</span>
+        </p>
+      ))}
     </>
   );
 }
