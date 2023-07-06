@@ -1,26 +1,25 @@
 import "./App.css";
-import React, { useState } from "react";
-import Workout from "./Components/Workout";
+import React, { useState, useEffect } from "react";
 import workoutData from "./workoutData.json";
+import WorkoutContainer from "./Components/WorkoutContainer";
 
 function App() {
+  const [workouts, setWorkouts] = useState(localStorage);
+
   return (
     <>
       <h1>Workout Tracker</h1>
       <p>Click when done with active workout!</p>
-      <div className="workout-container">
+      {/* <div className="workout-container">
         {workoutData.map((workout) => (
           <Workout name={workout.name} active={workout.active} />
         ))}
-      </div>
-      <br />
-      <h3>Workouts completed</h3>
-      {Object.entries(localStorage).map((entry) => (
-        <p>
-          <span style={{ fontWeight: "bold" }}>{entry[0]}</span>:{" "}
-          <span style={{ color: "red" }}>{entry[1]}</span>
-        </p>
-      ))}
+      </div> */}
+      <WorkoutContainer
+        workoutData={workoutData}
+        workouts={workouts}
+        setWorkouts={setWorkouts}
+      />
     </>
   );
 }

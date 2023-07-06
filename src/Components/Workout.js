@@ -1,24 +1,21 @@
 import React from "react";
 
-const Workout = ({ name, active }) => {
+const Workout = ({ name, active, handleClickFromParent, workouts }) => {
   const [background, setBackground] = React.useState({
     backgroundColor: active ? "red" : "blue",
   });
 
-  const handleClick = (event) => {
+  const handleClick = () => {
     setBackground({
       backgroundColor: active ? "green" : "blue",
     });
-    localStorage.setItem(new Date().toLocaleString(), [
-      event.target.textContent,
-    ]);
-    console.log(localStorage);
+    handleClickFromParent();
   };
 
   return (
     <div className="workout-text-container">
       <div
-        onClick={handleClick}
+        onClick={active ? handleClick : () => {}}
         className={`workout-item ${active ? "active" : "inactive"}`}
         style={{
           ...background,
