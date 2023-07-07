@@ -2,12 +2,12 @@ import React from "react";
 
 const Workout = ({ name, active, handleClickFromParent, workouts }) => {
   const [background, setBackground] = React.useState({
-    backgroundColor: active ? "firebrick" : "blue",
+    backgroundColor: "firebrick",
   });
 
   const handleClick = () => {
     setBackground({
-      backgroundColor: active ? "green" : "blue",
+      backgroundColor: "green",
     });
     handleClickFromParent();
   };
@@ -15,8 +15,8 @@ const Workout = ({ name, active, handleClickFromParent, workouts }) => {
   return (
     <div className="workout-text-container">
       <div
-        onClick={active ? handleClick : () => {}}
-        className={`workout-item ${active ? "active" : "inactive"}`}
+        onClick={handleClick}
+        className={`workout-item active`}
         style={{
           ...background,
           color: "black",
