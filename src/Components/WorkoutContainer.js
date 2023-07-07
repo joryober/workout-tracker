@@ -17,8 +17,8 @@ const WorkoutContainer = ({ workoutData, workouts, setWorkouts }) => {
                     let dateAndTime = new Date().toLocaleString();
                     setWorkouts((prevWorkouts) => {
                       return [
-                        ...prevWorkouts,
                         `${[dateAndTime]}: ${workout.name}`,
+                        ...prevWorkouts,
                       ];
                     });
                     window.localStorage.setItem(dateAndTime, [workout.name]);

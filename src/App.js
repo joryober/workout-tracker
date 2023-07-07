@@ -9,9 +9,11 @@ function App() {
   );
 
   const [workouts, setWorkouts] = useState(
-    Object.entries(localStorage).map((entry) => {
-      return `${entry[0]}: ${entry[1]}`;
-    })
+    Object.entries(localStorage)
+      .map((entry) => {
+        return `${entry[0]}: ${entry[1]}`;
+      })
+      .sort((a, b) => b.localeCompare(a))
   );
 
   window.addEventListener("storage", () => {
