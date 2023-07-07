@@ -2,7 +2,7 @@ import React from "react";
 
 const Workout = ({ name, active, handleClickFromParent, workouts }) => {
   const [background, setBackground] = React.useState({
-    backgroundColor: active ? "red" : "blue",
+    backgroundColor: active ? "firebrick" : "blue",
   });
 
   const handleClick = () => {
@@ -19,12 +19,12 @@ const Workout = ({ name, active, handleClickFromParent, workouts }) => {
         className={`workout-item ${active ? "active" : "inactive"}`}
         style={{
           ...background,
-          color: active ? "black" : "seashell",
+          color: "black",
+          fontWeight: "bold",
         }}
       >
         {name}
       </div>
-      {active && <p>(active)</p>}
     </div>
   );
 };

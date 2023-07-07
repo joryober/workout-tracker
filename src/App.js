@@ -1,11 +1,28 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import workoutData from "./workoutData.json";
 import WorkoutContainer from "./Components/WorkoutContainer";
 
+let workoutData = [
+  {
+    name: "Bis & Back",
+    active: true,
+  },
+  {
+    name: "Run a Mile",
+    active: true,
+  },
+  {
+    name: "Chest & Tris",
+    active: true,
+  },
+  {
+    name: "Shoulders & Legs",
+    active: true,
+  },
+];
 function App() {
   const [paragraphText, setParagraphText] = useState(
-    "Click when done with active workout!"
+    "Click when done with workout!"
   );
 
   const [workouts, setWorkouts] = useState(
