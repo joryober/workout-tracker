@@ -16,10 +16,10 @@ const WorkoutContainer = ({ workoutData, workouts, setWorkouts }) => {
                 ? () => {
                     let dateAndTime = new Date().toLocaleString();
                     setWorkouts((prevWorkouts) => {
-                      return {
+                      return [
                         ...prevWorkouts,
-                        [dateAndTime]: workout.name,
-                      };
+                        `${[dateAndTime]}: ${workout.name}`,
+                      ];
                     });
                     window.localStorage.setItem(dateAndTime, [workout.name]);
                     window.dispatchEvent(new Event("storage"));
@@ -30,10 +30,9 @@ const WorkoutContainer = ({ workoutData, workouts, setWorkouts }) => {
         ))}
       </div>
       <h3>Workouts completed</h3>
-      {Object.entries(workouts).map((entry) => (
-        <p key={entry[0]}>
-          <span style={{ fontWeight: "bold" }}>{entry[0]}</span>:{" "}
-          <span style={{ color: "red" }}>{entry[1]}</span>
+      {workouts.map((workout) => (
+        <p>
+          <span style={{ fontWeight: "bold" }}>{workout}</span>
         </p>
       ))}
     </>

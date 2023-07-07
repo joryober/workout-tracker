@@ -8,7 +8,11 @@ function App() {
     "Click when done with active workout!"
   );
 
-  const [workouts, setWorkouts] = useState(localStorage);
+  const [workouts, setWorkouts] = useState(
+    Object.entries(localStorage).map((entry) => {
+      return `${entry[0]}: ${entry[1]}`;
+    })
+  );
 
   window.addEventListener("storage", () => {
     setParagraphText("Good job! Come back tomorrow.");
