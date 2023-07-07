@@ -4,17 +4,20 @@ import workoutData from "./workoutData.json";
 import WorkoutContainer from "./Components/WorkoutContainer";
 
 function App() {
+  const [paragraphText, setParagraphText] = useState(
+    "Click when done with active workout!"
+  );
+
   const [workouts, setWorkouts] = useState(localStorage);
+
+  window.addEventListener("storage", () => {
+    setParagraphText("Good job! Come back tomorrow.");
+  });
 
   return (
     <>
       <h1>Workout Tracker</h1>
-      <p>Click when done with active workout!</p>
-      {/* <div className="workout-container">
-        {workoutData.map((workout) => (
-          <Workout name={workout.name} active={workout.active} />
-        ))}
-      </div> */}
+      <p>{paragraphText}</p>
       <WorkoutContainer
         workoutData={workoutData}
         workouts={workouts}

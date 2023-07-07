@@ -21,7 +21,8 @@ const WorkoutContainer = ({ workoutData, workouts, setWorkouts }) => {
                         [dateAndTime]: workout.name,
                       };
                     });
-                    localStorage.setItem(dateAndTime, [workout.name]);
+                    window.localStorage.setItem(dateAndTime, [workout.name]);
+                    window.dispatchEvent(new Event("storage"));
                   }
                 : () => {}
             }
